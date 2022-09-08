@@ -16,9 +16,11 @@ export const getById = async (id: number) => {
         },
         select: {
             id: true,
+            askedBy: true,
             question: true,
             answers: {
                 select: {
+                    answeredBy: true,
                     answer: true,
                 },
             },

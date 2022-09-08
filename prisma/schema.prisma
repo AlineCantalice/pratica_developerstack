@@ -21,8 +21,8 @@ model question {
 
 model answer {
   id         Int       @id @default(autoincrement())
-  answeredBy String    
-  answer     String
+  answeredBy String    @map("answeredBy") 
+  answer     String    @map("answer") 
   question   question @relation(fields: [questionId], references: [id])
   questionId Int
 
