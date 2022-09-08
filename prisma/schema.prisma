@@ -10,21 +10,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model questions {
+model question {
   id       Int       @id @default(autoincrement())
   askedBy  String
   question String
-  answers  answers[]
+  answers  answer[]
 
-  @@map("question")
+  @@map("questions")
 }
 
-model answers {
+model answer {
   id         Int       @id @default(autoincrement())
   answeredBy String    
   answer     String
-  question   questions @relation(fields: [questionId], references: [id])
+  question   question @relation(fields: [questionId], references: [id])
   questionId Int
 
-  @@map("answer")
+  @@map("answers")
 }

@@ -1,3 +1,3 @@
-import { questions } from "@prisma/client";
+import { question } from "@prisma/client";
 
-export type CreateQuestionData = Omit<questions, 'id'>;
+export type CreateQuestionData = Omit<question, 'id'>;
